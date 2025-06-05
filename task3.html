@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="number" id="input" placeholder="Enter the number">
+    <button onclick="myFun()">check</button>
+    <button onclick="funClick()">push</button>
+    <button onclick="addNumber()">add</button>
+
+
+
+
+</body>
+<script>
+
+    const array = []
+
+    function funClick() {
+
+        const add = document.getElementById("input").value
+        const value = Number(add)
+
+        if (value == "") {
+            console.log("enter the valid number")
+        }
+        else {
+            array.push(value)
+            console.log( "pushed value is " + array)
+        }
+
+    }
+
+    function addNumber() {
+
+        const sum = document.getElementById("input").value
+        const added = Number(sum)
+
+        if (array.length === 0) {
+            console.log(" number is empty")
+
+        }
+        else{
+            const total=array.reduce((sum,num)=> sum+num,0)
+            console.log("total value is" + total)
+        }
+
+    }
+
+    function myFun() {
+
+        const value = document.getElementById("input").value
+
+        const number = Number(value)
+
+
+        if (number == "") {
+            console.log("please enter the valid number")
+
+        }
+        else if (number % 2 === 0) {
+
+            // string manipulation
+
+            console.log(`${number} is even`)
+        }
+        else {
+            console.log(`${number} is odd`)
+        }
+    }
+
+
+
+
+
+
+</script>
+
+</html>
